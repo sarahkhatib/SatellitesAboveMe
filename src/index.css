@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+@import '@mantine/core/styles.css';
+@import '@mantine/carousel/styles.css';
+
+body {
+  color: #8fffff;
+  text-align: center;
+}
+.main-content {
+  width: 100%;
+  min-height: 90vh; /* Ensures full height of the viewport */
+  padding: 40px;
+  background: linear-gradient(to right, #0e132d, #250439);
+  background-color: #2d1e61;
+  background-image:
+  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+
+}
+.sections-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
+  gap: 30px;
+}
+.section-1 {
+  padding: 30px;
+  border: 1px solid #5237b2;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: #0d0628;
+  background-image: url(/wallpaper.jpg);
+}
+.section-2 {
+  padding: 30px;
+  border: 1px solid #5237b2;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: #0d0628;
+}
+
+.custom-button {
+  margin: 20px;
+  font-size: x-large;
+  display: flexbox;
+  width: 20%;
+  height: 80px;
+  font-weight: bold;
+  text-align: center;
+  background: #8fffff;
+  border: 1px solid;
+  border-radius: 8px;
+}
+
+.custom-button:hover {
+  background-color: #b9a6ff;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #b9a6ff; 
+  color: #0d0628;
+  padding: 40px 0;
+  text-align: center;
+  z-index: 10; 
+}
+
+.footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #b9a6ff; 
+  color: #0d0628;
+  padding: 40px 0;
+  text-align: center;
+  z-index: 10; 
+}
+
+.leaflet-tooltip {
+  background-color: #8fffff;
+  color: #5237b2;
+  font-size: 12px;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: left;
+}
+
+#map {
+  width: 100%;
+  height: 500px; /* Ensure the height is sufficient */
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
