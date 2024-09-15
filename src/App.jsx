@@ -179,14 +179,21 @@ function App() {
         return;
       }
       try {
-        const API_KEY = import.meta.env.VITE_N2YO_API_KEY;
-        const searchRadius = 90; // Default radius, can be customized
-        const apiUrl = `api/rest/v1/satellite/above/${position.observerLatitude}/${position.observerLongitude}/${position.observerAltitude || 0}/${searchRadius}/0/&apiKey=${API_KEY}`;
+        const response = await fetch('/.netlify/functions/getSatellites', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            observerLatitude: position.observerLatitude,
+            observerLongitude: position.observerLongitude,
+            observerAltitude: position.observerAltitude,
+          }),
+        });
+        const data = await response.json();
         
-        const response = await axios.get(apiUrl);
-        
-        if (response.data && Array.isArray(response.data.above)) {
-          const satellitesData = response.data.above.map(satellite => ({
+        if (Array.isArray(data.above)) {
+          const satellitesData = data.above.map(satellite => ({
             category: satellite.category || 'Unknown',
             satid: satellite.satid,
             satname: satellite.satname,
@@ -202,7 +209,7 @@ function App() {
           // Set the closest 10 satellites to state
           setSatellites(satellitesData.slice(0, 10));
         } else {
-          console.error('Invalid response from N2YO API', response.data, url);
+          console.error('Invalid response from N2YO API', data);
         }
       } catch (error) {
         console.error('Error fetching satellite data:', error);
