@@ -299,6 +299,9 @@ function App() {
             <Text align="left" size="xl"><br></br>
               Currently this project is hosted only in the client-side, but I do have a version where the API is called from the backend and the data is stored in Mongoose.
             </Text>
+            <Text align="left" size="xl"><br></br>
+              If the satellites don't load, try again in a few seconds. Sometimes the API is overloaded.
+            </Text>
         </section>
       </div>
     </div>
