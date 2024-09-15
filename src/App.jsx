@@ -192,8 +192,8 @@ function App() {
         });
         const data = await response.json();
         
-        if (Array.isArray(data.above)) {
-          const satellitesData = data.above.map(satellite => ({
+        if (Array.isArray(data)) {
+          const satellitesData = data.map(satellite => ({
             category: satellite.category || 'Unknown',
             satid: satellite.satid,
             satname: satellite.satname,
