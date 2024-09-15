@@ -245,30 +245,34 @@ function App() {
      <Title order={1}>Satellites Above Me</Title>
     </header>
     <div className="main-content">
-      <form onSubmit={handleSubmit}>
-        <button className="custom-button" type="submit">Refresh</button>
-      </form>
-      <div style={{width: '1000px', height: '500px', display:'inline-flex'}}>
-        {loading && (
-          <div style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            bottom: 0,
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: 'rgba(255, 255, 255, 0.7)',
-            zIndex: 9999
-          }}>
-            <ClipLoader size={150} color={"#123abc"} loading={loading} />
+      <div className="sections-container">
+        <section className="section-1">
+          <form onSubmit={handleSubmit}>
+            <button className="custom-button" type="submit">Refresh</button>
+          </form>
+          <div style={{width: '1000px', height: '500px', display:'inline-flex'}}>
+            {loading && (
+              <div style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'rgba(255, 255, 255, 0.7)',
+                zIndex: 9999
+              }}>
+                <ClipLoader size={150} color={"#123abc"} loading={loading} />
+              </div>
+            )}
+            <div id="map"></div>
           </div>
-        )}
-        <div id="map"></div>
+        </section>
       </div>
       <div className="sections-container">
-        <section id="about" className="section-2">
+        <section className="section-2">
             <Title align="left" order={2}>About this Project</Title>
             <br></br>
             <Text align="left" size="xl">
