@@ -10,7 +10,6 @@ body {
 .main-content {
   width: 100%;
   min-height: 90vh; /* Ensures full height of the viewport */
-  padding: 40px;
   background: linear-gradient(to right, #0e132d, #250439);
   background-color: #2d1e61;
   background-image:
