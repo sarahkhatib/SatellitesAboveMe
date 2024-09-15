@@ -32,8 +32,7 @@ body {
 }
 .section-2 {
   border: 1px solid #5237b2;
-  border-radius: 20px;
-  margin-bottom: 10px;
+  padding:30px;
   background-color: #0d0628;
 }
 
