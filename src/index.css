@@ -78,7 +78,7 @@ body {
   color: #0d0628;
   padding: 40px 0;
   text-align: center;
-  z-index: 10; 
+  z-index: 1; 
 }
 
 .leaflet-tooltip {
