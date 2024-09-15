@@ -27,9 +27,6 @@ body {
   gap: 30px;
 }
 .section-1 {
-  border: 1px solid #5237b2;
-  border-radius: 20px;
-  margin-bottom: 10px;
   background-color: #0d0628;
   background-image: url(/wallpaper.jpg);
 }
