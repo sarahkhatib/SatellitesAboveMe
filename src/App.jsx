@@ -246,7 +246,7 @@ function App() {
     </header>
     <div className="main-content">
       //<div className="sections-container">
-        <section id="about" className="section-1">
+        //<section id="about" className="section-1">
           <form onSubmit={handleSubmit}>
             <button className="custom-button" type="submit">Refresh</button>
           </form>
@@ -268,7 +268,7 @@ function App() {
               </div>
             )}
           </div>
-        </section>
+        //</section>
       //</div>
       <div className="sections-container">
         <section id="about" className="section-2">
