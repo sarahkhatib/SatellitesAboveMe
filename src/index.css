@@ -96,6 +96,13 @@ body {
   height: 500px; /* Ensure the height is sufficient */
 }
 
+/* Media Query for Small Screens */
+    @media (max-width: 768px) {
+      #map {
+        height: 300px; /* Adjust height for phones or smaller devices */
+      }
+    }
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
