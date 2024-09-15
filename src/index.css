@@ -67,7 +67,7 @@ body {
   color: #0d0628;
   padding: 40px 0;
   text-align: center;
-  z-index: 1; 
+  z-index: 999; 
 }
 
 .footer {
@@ -78,7 +78,7 @@ body {
   color: #0d0628;
   padding: 40px 0;
   text-align: center;
-  z-index: 1; 
+  z-index: 999; 
 }
 
 .leaflet-tooltip {
