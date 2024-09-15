@@ -19,3 +19,5 @@ TO RUN THIS:
 3. Create a .env file in the repository's root folder with the following variable: VITE_N2YO_API_KEY=<YOUR_API_KEY>
 4. Install dependencies using npm install <library>
 5. Run the following command on your terminal: netlify dev
+
+Here is a working sample of this: https://satellitesaboveme.netlify.app/
