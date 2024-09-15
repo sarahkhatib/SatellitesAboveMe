@@ -245,7 +245,7 @@ function App() {
      <Title order={1}>Satellites Above Me</Title>
     </header>
     <div className="main-content">
-      <div className="sections-container">
+      //<div className="sections-container">
         <section id="about" className="section-1">
           <form onSubmit={handleSubmit}>
             <button className="custom-button" type="submit">Refresh</button>
@@ -267,10 +267,9 @@ function App() {
                 <ClipLoader size={150} color={"#123abc"} loading={loading} />
               </div>
             )}
-            <div id="map"></div>
           </div>
         </section>
-      </div>
+      //</div>
       <div className="sections-container">
         <section id="about" className="section-2">
             <Title align="left" order={2}>About this Project</Title>
