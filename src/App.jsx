@@ -245,8 +245,8 @@ function App() {
      <Title order={1}>Satellites Above Me</Title>
     </header>
     <div className="main-content">
-      /*<div className="sections-container">*/
-        /*<section id="about" className="section-1">*/
+      <div className="sections-container">
+        <section id="about" className="section-1">
           <form onSubmit={handleSubmit}>
             <button className="custom-button" type="submit">Refresh</button>
           </form>
@@ -268,8 +268,8 @@ function App() {
               </div>
             )}
           </div>
-        /*</section>*/
-      /*</div>*/
+        </section>
+      </div>
       <div className="sections-container">
         <section id="about" className="section-2">
             <Title align="left" order={2}>About this Project</Title>
