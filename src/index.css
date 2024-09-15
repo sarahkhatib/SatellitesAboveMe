@@ -3,45 +3,53 @@
 @import '@mantine/core/styles.css';
 @import '@mantine/carousel/styles.css';
 
-body {
-  color: #8fffff;
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden; /* Prevents page scrolling */
   text-align: center;
+  color: #8fffff;
+  display: flex;
+  flex-direction: column;
 }
+
+/* Flex container to allow sticky footer */
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
 .main-content {
   width: 100%;
-  min-height: 90vh; /* Ensures full height of the viewport */
-  background: linear-gradient(to right, #0e132d, #250439);
-  background-color: #2d1e61;
-  background-image:
-  radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-  radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-  radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-  radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
-  background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
-  background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
-
+  background-size: cover;
+  background-position: center; 
+  background-attachment: fixed;
+  flex: 1;
 }
 .sections-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 2fr));
-  gap: 30px;
 }
+
 .section-1 {
   background-color: #0d0628;
   background-image: url(/wallpaper.jpg);
+  padding-bottom: 20px;
 }
 .section-2 {
-  border: 1px solid #5237b2;
-  padding:30px;
+  border-top: 1px solid #5237b2;
   background-color: #0d0628;
+  padding: 50px;
 }
 
 .custom-button {
   margin: 20px;
   font-size: x-large;
   display: flexbox;
-  width: 150px;
-  height: 80px;
+  width: 200px;
+  height: 50px;
   font-weight: bold;
   text-align: center;
   background: #8fffff;
@@ -57,22 +65,20 @@ body {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #b9a6ff; 
-  color: #0d0628;
-  padding: 40px 0;
-  text-align: center;
-  z-index: 999; 
+  color: #b9a6ff;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #0e132d, #250439);
+  padding: 20px 0;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
 }
 
 .footer {
   position: sticky;
-  bottom: 0;
-  width: 100%;
-  background-color: #b9a6ff; 
+  background-color: #b9a6ff;
   color: #0d0628;
-  padding: 40px 0;
-  text-align: center;
-  z-index: 999; 
+  padding: 10px 0;
+  z-index: 999;
 }
 
 .leaflet-tooltip {
@@ -87,6 +93,7 @@ body {
 #map {
   width: 100%;
   height: 500px; /* Ensure the height is sufficient */
+  z-index: 10;
 }
 
 /* Media Query for Small Screens */

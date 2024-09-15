@@ -4,7 +4,7 @@ import axios from 'axios';
 import L from 'leaflet';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 import 'leaflet/dist/leaflet.css';
-import { Container, Title, Text, List } from '@mantine/core';
+import { Container, Title, Text, List, Modal, Button } from '@mantine/core';
 
 function App() {
 
@@ -17,6 +17,7 @@ function App() {
     observerAltitude: null,
   });
   const [satellites, setSatellites] = useState([]);
+  const [aboutModalOpened, setAboutModalOpened] = useState(false); // State for modal
 
   // Function to get user's geo location
   const getLocation = (callback) => {
@@ -242,68 +243,65 @@ function App() {
   return (
   <div>
     <header className="header">
-     <Title order={1}>Satellites Above Me</Title>
+      <div className="header-content">
+        <Title order={1} align="center">Satellites Above Me</Title>
+      </div>
     </header>
     <div className="main-content">
-      <div className="sections-container">
-        <section className="section-1">
-          <form onSubmit={handleSubmit}>
-            <button className="custom-button" type="submit">Refresh</button>
-          </form>
-          <div style={{width: '1000px', height: '500px', display:'inline-flex'}}>
-            {loading && (
-              <div style={{
-                position: 'absolute',
-                top: 0,
-                left: 0,
-                right: 0,
-                bottom: 0,
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'rgba(255, 255, 255, 0.7)',
-                zIndex: 9999
-              }}>
-                <ClipLoader size={150} color={"#123abc"} loading={loading} />
-              </div>
-            )}
-            <div id="map"></div>
-          </div>
-        </section>
-      </div>
-      <div className="sections-container">
-        <section className="section-2">
-            <Title align="left" order={2}>About this Project</Title>
+      <section className="section-1">
+        <form onSubmit={handleSubmit}>
+          <button className="custom-button" type="submit">Get Satellites</button>
+        </form>
+        <div style={{width: '1000px', height: 'auto', display:'inline-flex'}}>
+          {loading && (
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              backgroundColor: 'rgba(255, 255, 255, 0.7)',
+              zIndex: 9999
+            }}>
+              <ClipLoader size={150} color={"#123abc"} loading={loading} />
+            </div>
+          )}
+          <div id="map"></div>
+        </div>
+      </section>
+        <div className="section-2">
+          <Title align="left" order={2}>About this Project</Title>
+          <br></br>
+          <Text align="left" size="xl">
+            This is a web-based application that allows users to 
+            track satellites above their current geographic location in real-time. 
+            The application leverages the N2YO satellite API to fetch 
+            satellite data based on the user's latitude, longitude, and altitude. 
+            Users can visualize the location of satellites on an interactive map 
+            using the Leaflet.js library. Hovering over the icons will provide some information about them.
             <br></br>
-            <Text align="left" size="xl">
-              This is a web-based application that allows users to 
-              track satellites above their current geographic location in real-time. 
-              The application leverages the N2YO satellite API to fetch 
-              satellite data based on the user's latitude, longitude, and altitude. 
-              Users can visualize the location of satellites on an interactive map 
-              using the Leaflet.js library. Hovering over the icons will provide some information about them.
-              <br></br>
-              <br></br>
-              Click the refresh button to see the 10 closest satellites to you!
-            </Text>
-            <Text align="left" size="xl"><br></br>
-              Key Features:
-            </Text>
-            <List align="left" size="xl">
-              <List.Item>Geolocation-based tracking: Automatically detects the user’s location using the browser’s Geolocation API and retrieves satellite data within a defined radius.</List.Item>
-              <List.Item>Interactive Map: Displays the user’s location and the nearest satellites on a real-time map with satellite markers.</List.Item>
-              <List.Item>Satellite Information: Provides detailed information about each satellite, including name, latitude, longitude, altitude, and the distance from the user.</List.Item>
-              <List.Item>Distance Calculation: Calculates the 3D distance between the user and satellites using the Haversine formula and highlights the closest one by pointing to it with a green line.</List.Item>
-              <List.Item>Responsive Design: Adapts to different screen sizes for an optimized user experience across devices.</List.Item>
-            </List>
-            <Text align="left" size="xl"><br></br>
-              Currently this project is hosted only in the client-side, but I do have a version where the API is called from the backend and the data is stored in Mongoose.
-            </Text>
-            <Text align="left" size="xl"><br></br>
-              If the satellites don't load, try again in a few seconds. Sometimes the API is overloaded.
-            </Text>
-        </section>
-      </div>
+            <br></br>
+            Click the button to see the 10 closest satellites to you!
+            If the satellites don't load, try again in a few seconds. (Sometimes the API is overloaded.)
+          </Text>
+          <Text align="left" size="xl"><br></br>
+            Key Features:
+          </Text>
+          <List align="left" size="xl">
+            <List.Item>Geolocation-based tracking: Automatically detects the user’s location using the browser’s Geolocation API and retrieves satellite data within a defined radius.</List.Item>
+            <List.Item>Interactive Map: Displays the user’s location and the nearest satellites on a real-time map with satellite markers.</List.Item>
+            <List.Item>Satellite Information: Provides detailed information about each satellite, including name, latitude, longitude, altitude, and the distance from the user.</List.Item>
+            <List.Item>Distance Calculation: Calculates the 3D distance between the user and satellites using the Haversine formula and highlights the closest one by pointing to it with a green line.</List.Item>
+            <List.Item>Responsive Design: Adapts to different screen sizes for an optimized user experience across devices.</List.Item>
+          </List>
+          <Text align="left" size="xl"><br></br>
+            Currently this project is hosted only in the client-side, but I do have a version where the API is called from the backend and the data is stored in Mongoose.
+          </Text>
+          
+        </div>
     </div>
     <footer className="footer">
       <Container>
