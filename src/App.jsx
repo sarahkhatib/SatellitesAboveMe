@@ -267,6 +267,7 @@ function App() {
                 <ClipLoader size={150} color={"#123abc"} loading={loading} />
               </div>
             )}
+            <div id="map"></div>
           </div>
         </section>
       </div>
