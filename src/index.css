@@ -88,6 +88,7 @@ body {
   padding: 10px;
   border-radius: 8px;
   text-align: left;
+  pointer-events: auto; /* Enable touch interactions */
 }
 
 #map {
@@ -108,8 +109,11 @@ body {
   .section-2 {
     padding: 20px;
   }
+  .leaflet-tooltip {
+    font-size: 14px;
+    padding: 12px; 
+  }
 }
-
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -117,5 +121,4 @@ body {
   to {
     transform: rotate(360deg);
   }
-
 }
