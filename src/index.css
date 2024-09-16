@@ -88,6 +88,7 @@ body {
   padding: 10px;
   border-radius: 8px;
   text-align: left;
+  pointer-events: auto; /* Enable touch interactions */
 }
 
 #map {
@@ -97,13 +98,22 @@ body {
 }
 
 /* Media Query for Small Screens */
-    @media (max-width: 768px) {
-      #map {
-        height: 300px; /* Adjust height for phones or smaller devices */
-        width: 100vw;
-      }
-    }
-
+@media (max-width: 768px) {
+  #map {
+    height: 300px; /* Adjust height for phones or smaller devices */
+    width: 100vw;
+  }
+  .custom-button {
+    font-size: medium;
+  }
+  .section-2 {
+    padding: 20px;
+  }
+  .leaflet-tooltip {
+    font-size: 14px;
+    padding: 12px; 
+  }
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

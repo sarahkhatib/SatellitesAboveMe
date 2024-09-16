@@ -138,7 +138,6 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     getLocation();
     if (position.observerLatitude && position.observerLongitude) {
