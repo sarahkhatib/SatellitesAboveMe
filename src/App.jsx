@@ -137,12 +137,6 @@ function App() {
       }
     }
   };
-  marker.on('click', function() {
-    marker.openTooltip();
-  });
-  map.on('click', function() {
-    marker.closeTooltip();
-  });
 
   useEffect(() => {
     getLocation();
