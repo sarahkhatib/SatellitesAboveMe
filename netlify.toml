@@ -1,2 +1,5 @@
 [build]
   functions = "netlify/functions"
+
+[build.environment]
+  FUNCTION_TIMEOUT = 120

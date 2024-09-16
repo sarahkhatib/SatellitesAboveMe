@@ -191,7 +191,12 @@ function App() {
             observerAltitude: position.observerAltitude,
           }),
         });
-        const data = await response.json();
+
+        // Log the response to see its content
+        const text = await response.text();
+        console.log('Response text:', text);
+
+        const data = JSON.parse(text);
         
         if (Array.isArray(data)) {
           const satellitesData = data.map(satellite => ({
@@ -213,7 +218,7 @@ function App() {
           console.error('Invalid response from N2YO API', data);
         }
       } catch (error) {
-        console.error('Error fetching satellite data:', error);
+        console.error('Error fetching satellite data:', error.message);
       } finally {
         setLoading(false); // Stop loading
       }
