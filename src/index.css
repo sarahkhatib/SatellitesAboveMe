@@ -97,12 +97,15 @@ body {
 }
 
 /* Media Query for Small Screens */
-    @media (max-width: 768px) {
-      #map {
-        height: 300px; /* Adjust height for phones or smaller devices */
-        width: 100vw;
-      }
-    }
+@media (max-width: 768px) {
+  #map {
+    height: 300px; /* Adjust height for phones or smaller devices */
+    width: 100vw;
+  }
+  .custom-button {
+    font-size: medium;
+  }
+}
 
 @keyframes App-logo-spin {
   from {
@@ -111,4 +114,5 @@ body {
   to {
     transform: rotate(360deg);
   }
+
 }
