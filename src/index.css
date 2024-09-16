@@ -105,6 +105,9 @@ body {
   .custom-button {
     font-size: medium;
   }
+  .section-2 {
+    padding: 20px;
+  }
 }
 
 @keyframes App-logo-spin {
