@@ -95,6 +95,8 @@ body {
   width: 100%;
   height: 500px; /* Ensure the height is sufficient */
   z-index: 10;
+  border-width: 5px;
+  border:white;
 }
 
 /* Media Query for Small Screens */

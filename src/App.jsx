@@ -300,11 +300,7 @@ function App() {
             <List.Item>Satellite Information: Provides detailed information about each satellite, including name, latitude, longitude, altitude, and the distance from the user.</List.Item>
             <List.Item>Distance Calculation: Calculates the 3D distance between the user and satellites using the Haversine formula and highlights the closest one by pointing to it with a green line.</List.Item>
             <List.Item>Responsive Design: Adapts to different screen sizes for an optimized user experience across devices.</List.Item>
-          </List>
-          <Text align="left" size="xl"><br></br>
-            Currently this project is hosted only in the client-side, but I do have a version where the API is called from the backend and the data is stored in Mongoose.
-          </Text>
-          
+          </List>         
         </div>
     </div>
     <footer className="footer">
